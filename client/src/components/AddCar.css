@@ -1,0 +1,27 @@
+/* src/components/AddCar.css */
+.add-car-container {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.add-car-form input,
+.add-car-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.add-car-form button {
+  padding: 10px;
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-car-form button:hover {
+  background-color: #3f4bc0;
+}

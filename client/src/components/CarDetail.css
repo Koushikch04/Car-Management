@@ -1,0 +1,136 @@
+/* Container for the car detail page */
+.car-detail-container {
+  width: 80%;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styles */
+.car-detail-container h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Button styles */
+.car-detail button {
+  padding: 12px 18px;
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.car-detail button:hover {
+  background-color: #3f4bc0;
+  transform: scale(1.05);
+}
+
+.car-detail button:focus {
+  outline: none;
+}
+
+/* Form inputs and textarea styling */
+.car-detail-form input,
+.car-detail-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-detail-form input:focus,
+.car-detail-form textarea:focus {
+  border-color: #5c6bc0;
+  box-shadow: 0 0 8px rgba(92, 107, 192, 0.3);
+  outline: none;
+}
+
+/* Styling for car images */
+.car-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+  justify-content: center;
+}
+
+.car-image {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.car-image:hover {
+  transform: scale(1.05);
+}
+
+/* Section for car details */
+.car-detail p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 10px 0;
+  color: #555;
+}
+
+.car-detail strong {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Styling for tags */
+.car-detail .tags {
+  font-size: 16px;
+  color: #555;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.car-detail .tags span {
+  background-color: #f1f1f1;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  color: #666;
+  transition: background-color 0.3s ease;
+}
+
+.car-detail .tags span:hover {
+  background-color: #5c6bc0;
+  color: white;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .car-detail-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .car-images {
+    justify-content: flex-start;
+  }
+
+  .car-image {
+    width: 120px;
+    height: 80px;
+  }
+}
