@@ -19,10 +19,12 @@ const router = express.Router();
  *     description: This endpoint adds a new car to the system.
  *     tags:
  *       - Cars
+ *     security:
+ *       - BearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             type: object
  *             properties:
@@ -34,6 +36,11 @@ const router = express.Router();
  *                 type: array
  *                 items:
  *                   type: string
+ *               images:
+ *                 type: array
+ *                 items:
+ *                   type: string
+ *                   format: binary
  *             required:
  *               - title
  *               - description
@@ -54,6 +61,8 @@ router.post("/", uploadMultiple("images", 10), authMiddleware, addCar);
  *     description: This endpoint retrieves all the cars.
  *     tags:
  *       - Cars
+ *     security:
+ *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: List of cars
@@ -81,6 +90,8 @@ router.get("/", authMiddleware, getCars);
  *         description: ID of the car to retrieve
  *         schema:
  *           type: string
+ *     security:
+ *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: Car details
@@ -104,6 +115,8 @@ router.get("/:id", authMiddleware, getCarById);
  *         description: ID of the car to update
  *         schema:
  *           type: string
+ *     security:
+ *       - BearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -148,6 +161,8 @@ router.put("/:id", authMiddleware, updateCar);
  *         description: ID of the car to delete
  *         schema:
  *           type: string
+ *     security:
+ *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: Car deleted successfully
