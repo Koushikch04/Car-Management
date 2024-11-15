@@ -1,6 +1,6 @@
 import axios from "axios";
 import API_URL from "../api/api";
-
+import { useNavigate } from "react-router-dom";
 export const fetchCars = () => async (dispatch) => {
   try {
     const { data } = await axios.get(`${API_URL}/cars`, {
@@ -22,6 +22,8 @@ export const addCar = (carData) => async (dispatch) => {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
     dispatch({ type: "ADD_CAR", payload: data });
+    const navigate = useNavigate();
+    navigate("/cars");
   } catch (error) {
     console.error("Error adding car:", error);
     dispatch({

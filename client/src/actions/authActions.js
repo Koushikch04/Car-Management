@@ -40,9 +40,9 @@ export const signup =
         type: "USER_SIGNUP",
         payload: response.data,
       });
-      dispatch({
-        type: "CLEAR_MESSAGES",
-      });
+      setTimeout(() => {
+        dispatch({ type: "CLEAR_MESSAGES" });
+      }, 2000);
     } catch (error) {
       dispatch({
         type: "USER_AUTH_ERROR",

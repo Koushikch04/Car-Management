@@ -1,6 +1,6 @@
-// components/AddCar.js
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { addCar } from "../actions/carActions";
 import "./AddCar.css";
 
@@ -10,6 +10,7 @@ const AddCar = () => {
   const [tags, setTags] = useState("");
   const [images, setImages] = useState([]);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleImageChange = (e) => {
     setImages([...e.target.files]);
@@ -24,6 +25,8 @@ const AddCar = () => {
     images.forEach((image) => formData.append("images", image));
 
     dispatch(addCar(formData));
+
+    navigate("/cars");
   };
 
   return (
