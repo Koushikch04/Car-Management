@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCars } from "../actions/carActions";
 import "./CarList.css";
+import { Link } from "react-router-dom";
 
 const CarList = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const CarList = () => {
       <ul className="car-list">
         {filteredCars.map((car) => (
           <li key={car._id} className="car-item">
-            <a href={`/cars/${car._id}`}>{car.title}</a>
+            <Link to={`/cars/${car._id}`}> {car.title}</Link>
           </li>
         ))}
       </ul>

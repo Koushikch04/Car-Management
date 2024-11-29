@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signup } from "../actions/authActions";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Auth.css";
 
 const Signup = () => {
@@ -53,7 +53,7 @@ const Signup = () => {
         <button type="submit">Sign Up</button>
       </form>
       <p>
-        Already have an account? <a href="/login">Login</a>
+        Already have an account? <Link to="/login"></Link>
       </p>
     </div>
   );

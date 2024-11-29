@@ -20,7 +20,7 @@ const __dirname = path.dirname(__filename);
 
 const allowedOrigins = [
   "https://car-management-seven.vercel.app",
-  "http://localhost:5000",
+  "http://localhost:5173",
 ];
 
 const corsOptions = {

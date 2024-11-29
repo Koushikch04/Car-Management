@@ -25,16 +25,12 @@ export const registerUser = async (req, res) => {
       }),
     });
   } catch (error) {
-    console.log(error);
-
     res.status(500).json({ message: "Server error", error });
   }
 };
 
 // Login user
 export const loginUser = async (req, res) => {
-  console.log("Got request");
-
   const { email, password } = req.body;
 
   try {
@@ -42,8 +38,6 @@ export const loginUser = async (req, res) => {
     if (!user || !(await user.matchPassword(password))) {
       return res.status(400).json({ message: "Invalid credentials" });
     }
-
-    console.log(user);
 
     res.json({
       _id: user._id,
